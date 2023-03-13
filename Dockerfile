@@ -3,7 +3,7 @@ FROM golang:alpine as builder
 LABEL maintainer="erguotou525@gmail.compute"
 
 RUN apk --no-cache add git libc-dev gcc
-RUN go get github.com/mjibson/esc
+RUN go install github.com/mjibson/esc@latest
 
 COPY . /go/src/github.com/mailslurper/mailslurper
 WORKDIR /go/src/github.com/mailslurper/mailslurper/cmd/mailslurper
